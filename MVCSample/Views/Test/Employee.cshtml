@@ -1,0 +1,30 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Employee</title>
+</head>
+<body>
+    <b>Hi!!</b> From The Employee View
+    <br />
+    <br />
+    <div>
+        @{ 
+            MVCSample.Models.Employee emp = (MVCSample.Models.Employee)ViewData["Employee"];
+         }
+
+        <b>Employee Details...</b>
+        <br />
+        <br />
+        Emp Name:   @emp.FirstName @emp.LastName <br />
+        Emp Id:     @emp.EmployeeID<br />
+        Emp Salary: @emp.Salary.ToString("C")
+    </div>
+</body>
+</html>
