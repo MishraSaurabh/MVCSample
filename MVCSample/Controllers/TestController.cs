@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using MVCSample.Models;
 
 namespace MVCSample.Controllers
 {
@@ -14,13 +15,19 @@ namespace MVCSample.Controllers
             return "This is Hello from Test Controller";
         }
 
-        public  ActionResult GetView()
+        public ActionResult GetEmployee()
         {
-            return View("MyView");
-       }
+            Employee emp = new Employee();
+            emp.FirstName = "Name";
+            emp.LastName = "Surname";
+            emp.EmployeeID = 100;
+            emp.Salary = 4000;
+            ViewData["Employee"] = emp;
+            return View("Employee");
+        }
 
         public ActionResult GetSharedView()
-        {
+        {                  
             return View("SharedView");
         }
     }
